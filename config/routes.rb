@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     root :to => 'homes#top'
     resources :customers, only: [:index, :show, :edit, :update]
   end
-  
+
   scope module: :public do
     root :to => 'homes#top'
     get 'customers/my_page' => 'customers#show'

@@ -24,7 +24,7 @@
         </nav><br>
         <nav class="nav">
           <a>会員ステータス</a>
-          <a><%= @customer.is_deleted %></a>
+          <a><%= @customer.is_deleted_i18n %></a>
         </nav><br>
 <%= link_to "編集する", edit_admin_customer_path(@customer.id) %>
     </div>
