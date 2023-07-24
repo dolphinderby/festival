@@ -40,6 +40,13 @@
               <% elsif admin_signed_in? %>
                 <li>
                   <p class="nav-link text-light">
+                    <%= link_to admin_customers_path do %>
+                      会員一覧
+                    <% end %>
+                  </p>
+                </li>
+                <li>
+                  <p class="nav-link text-light">
                     <%= link_to destroy_admin_session_path, method: :delete  do %>
                       管理者ログアウト
                     <% end %>

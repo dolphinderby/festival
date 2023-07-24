@@ -1,24 +1,47 @@
-# README
+# 祭りの熱を追って
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+​
+## サイト概要
+### サイトテーマ
+日本各地のお祭りの情報について検索したり、自身が行ったお祭りの紹介ページにコメントを投稿できるコミュニティサイト。
 
-Things you may want to cover:
+​
+### テーマを選んだ理由
+日本全国を観光したいという目標がありその中で各地のお祭りを見てみたい、参加したいと思っていました。
+けれど、いくつもあるお祭りの開催日や詳細を一つ一つ探すのは時間がかかると考え、地域ごとにまとめられている
+ページがあると便利だなと考えました。
+また、実際にお祭りに参加したことのあるユーザーがコメントをして互いに情報の共有ができるような
+サイトがあれば便利だと考えこのテーマにしました。
+コロナが明けたことで外出する人が増え、中止になっていた催しも戻ってきている今お祭りの情報を知った旅行者が
+参加することで、お祭りを開催している町への利益にもつながると考えています。
 
-* Ruby version
+​
+### ターゲットユーザ
+・観光の際に現地のお祭りへの参加を考えている人。
+・自身が行ったことのあるお祭りのコメントを書き、ほかの人と共有したい人。
 
-* System dependencies
+​
+### 主な利用シーン
+・行きたいお祭りの開催時期や場所を調べたい時。
+・現地に行く前にどんなお祭りなのか事前に情報を集めたい時。
+・自分が行ったお祭りの感想などを投稿する時。
 
-* Configuration
+​
+## 設計書
+<!--テーマを設定・提出する時点では不要です-->
+​
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
+​
+## 使用素材
+- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
+- アプリケーションの実装に使用したgem/bootstrapのリファレンスなどの記載は不要です。
+- 使用しない場合は、使用素材の項目をREADMEから削除してください。
+折りたたむ
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+実装機能リストのURL
+https://docs.google.com/spreadsheets/d/16fPmLbXj2yjB5wzgKYnG8WZA34UcUhM94q5Lk-xZvvk/edit?usp=sharing
