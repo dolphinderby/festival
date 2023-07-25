@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+    get 'tags/top'
+    get 'tags/edit'
+    get 'tags/update'
+  end
+  namespace :admin do
     root :to => 'homes#top'
     resources :customers, only: [:index, :show, :edit, :update]
   end
