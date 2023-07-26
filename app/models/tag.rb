@@ -3,4 +3,6 @@ class Tag < ApplicationRecord
   has_many :articles, through: :post_tags
   belongs_to :admin
 
+  validates :name, presence: true
+
 end

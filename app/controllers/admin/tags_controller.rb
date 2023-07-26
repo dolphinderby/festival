@@ -4,6 +4,10 @@ class Admin::TagsController < ApplicationController
     @tag = Tag.new
   end
 
+  def new
+    @tag = Tag.new
+  end
+
   def create
     @tag = Tag.new(tag_params)
     if @tag.save

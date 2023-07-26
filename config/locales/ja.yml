@@ -4,3 +4,8 @@ ja:
         is_deleted:
           active: "有効"
           deleted: "退会"
+
+    activerecord:
+      errors:
+        messages:
+          record_invalid: "バリデーションに失敗しました: %{errors}"
