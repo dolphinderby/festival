@@ -10,7 +10,8 @@ class Admin::TagsController < ApplicationController
 
   def create
     @tag = Tag.new(tag_params)
-    if @tag.save
+    #@tag.admin_id = current_admin.id
+    if @tag.save!
       redirect_to admin_tags_path
     else
       render :index
@@ -18,9 +19,17 @@ class Admin::TagsController < ApplicationController
   end
 
   def edit
+    @tag = Tag.find(params[:id])
   end
 
   def update
+    @tag = Tag.find(params[:id])
+    if @tag.update(tag_params)
+      flash[:notice] = "You have updated user successfully."
+      redirect_to admin_tags_path
+    else
+      render :edit
+    end
   end
 
   private

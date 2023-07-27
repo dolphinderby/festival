@@ -1,2 +1,15 @@
-<h1>Admin::Tags#edit</h1>
-<p>Find me in app/views/admin/tags/edit.html.erb</p>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="mx-auto">
+      <h1>タグ編集</h1>
+      <%= form_with model: @tag, url: admin_tag_path do |f| %>
+        <nav class="nav">
+          <a>タグ名</a>
+          <a><%= f.text_field :name %></a>
+        </nav><br>
+        <%= f.submit "変更を保存" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

@@ -6,8 +6,27 @@
         <p>タグ名</p>
         <%= f.text_field :name %>
         <%= f.submit '新規投稿' %>
-      <% end %>
+      <% end %><br>
+    <table class="table">
+        <thead>
+          <tr>
+            <th>商品ID</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @tags.each do |tag| %>
+            <tr>
+              <td>
+                  <%= tag.name %>
+              </td>
+              <td>
+                <%= link_to "編集する", edit_admin_tag_path(tag.id) %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
-
   </div>
 </div>
