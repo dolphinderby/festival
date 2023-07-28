@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     root :to => 'homes#top'
     resources :customers, only: [:index, :show, :edit, :update]
     resources :tags, only: [:index, :new, :create, :edit, :update]
+    resources :articles, only: [:index, :new, :create, :show, :edit, :update]
+    patch 'articles/:id/withdraw' => 'articles#withdraw'
   end
 
   scope module: :public do
@@ -13,6 +15,7 @@ Rails.application.routes.draw do
     patch 'customers/my_page/update' => 'customers#update'
     get 'customers/confirm' => 'customers#confirm'
     patch 'customers/withdraw' => 'customers#withdraw'
+    resources :articles, only: [:index, :show]
   end
 
   devise_for :customers, controllers: {
