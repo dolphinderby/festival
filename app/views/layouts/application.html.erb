@@ -54,6 +54,13 @@
                 </li>
                 <li>
                   <p class="nav-link text-light">
+                    <%= link_to admin_articles_path do %>
+                      お祭り記事一覧
+                    <% end %>
+                  </p>
+                </li>
+                <li>
+                  <p class="nav-link text-light">
                     <%= link_to destroy_admin_session_path, method: :delete  do %>
                       管理者ログアウト
                     <% end %>

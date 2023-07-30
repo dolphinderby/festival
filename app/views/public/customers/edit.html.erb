@@ -6,6 +6,10 @@
       <tbody>
         <table width="80%">
           <tr>
+            <td>ユーザーアイコン</td>
+            <td><%= f.file_field :image, accept: "image/*" %></td>
+          </tr>
+          <tr>
             <td>氏名</td>
             <td><%= f.text_field :last_name, autofoucs: true %></td>
             <td><%= f.text_field :first_name %></td>

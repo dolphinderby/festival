@@ -10,6 +10,10 @@
           <td><%= @customer.id %></td>
         </tr>
         <tr>
+          <th>ユーザーアイコン</th>
+          <td><%= image_tag @customer.get_image %></td>
+        </tr>
+        <tr>
           <th>氏名</th>
           <td><%= @customer.last_name %><%= @customer.first_name %></td>
         </tr>

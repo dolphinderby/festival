@@ -1,2 +1,24 @@
-<h1>Admin::Articles#new</h1>
-<p>Find me in app/views/admin/articles/new.html.erb</p>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <h1>記事作成</h1>
+      <%= form_with model: @article, url: admin_articles_path do |f| %>
+        <p>画像</p>
+        <%= f.file_field :image, accept: "image/*" %>
+        <p>お祭り名</p>
+        <%= f.text_field :name %>
+        <p>副題</p>
+        <%= f.text_field :sub_title %>
+        <p>お祭り概要</p>
+        <%= f.text_area :introduction %>
+        <p>都道府県</p>
+        <%= f.text_field :prefecture %>
+        <p>開催場所</p>
+        <%= f.text_field :venue %>
+        <p>開催日</p>
+        <%= f.text_field :event_date %>
+        <%= f.submit '新規投稿' %>
+      <% end %>
+    </div>
+  </div>
+</div>
