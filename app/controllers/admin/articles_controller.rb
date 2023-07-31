@@ -4,8 +4,8 @@ class Admin::ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(item_params)
-    if @article.save
+    @article = Article.new(article_params)
+    if @article.save!
       redirect_to admin_article_path(@article.id)
     else
       render :new
@@ -13,7 +13,7 @@ class Admin::ArticlesController < ApplicationController
   end
 
   def index
-    @article = Article.all
+    @articles = Article.all
   end
 
   def show
@@ -37,7 +37,7 @@ class Admin::ArticlesController < ApplicationController
    private
 
   def article_params
-    params.require(:article).permit(:name, :sub_title, :introduction, :prefecture, :venue, :event_day, :image)
+    params.require(:article).permit(:name, :sub_title, :introduction, :prefecture, :venue, :event_date, :image, tag_ids: [])
   end
 
 end

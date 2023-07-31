@@ -1,2 +1,33 @@
-<h1>投稿記事一覧</h1>
-<%= link_to "記事作成", new_admin_article_path %>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-11 offset-md-1">
+    <%= link_to "記事作成", new_admin_article_path %>
+      <h1>記事一覧</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>記事ID</th>
+            <th>お祭り名</th>
+            <th>都道府県</th>
+            <th>ステータス</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @articles.each do |article| %>
+            <tr>
+              <td><%= article.id %></td>
+              <td>
+                <%= link_to admin_article_path(article.id) do %>
+                  <%= article.name %>
+                <% end %>
+              </td>
+              <td><%= article.prefecture %></td>
+              <td><%= article.is_deleted %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

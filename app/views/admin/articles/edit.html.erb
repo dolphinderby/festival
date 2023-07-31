@@ -1,2 +1,47 @@
-<h1>Admin::Articles#edit</h1>
-<p>Find me in app/views/admin/articles/edit.html.erb</p>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <h1>記事編集</h1>
+      <%= form_with model: @article, url: admin_article_path do |f| %>
+          <table width="80%">
+            <tr>
+              <td>お祭り写真</td>
+              <td><%= f.file_field :image, accept: "image/*" %></td>
+            </tr>
+            <tr>
+              <td>お祭り名</td>
+              <td><%= f.text_field :name %></td>
+            </tr>
+            <tr>
+              <td>副題</td>
+              <td><%= f.text_field :sub_title %></td>
+            </tr>
+            <tr>
+              <td>お祭り記事</td>
+              <td><%= f.text_field :introduction %></td>
+            </tr>
+            <tr>
+              <td>都道府県</td>
+              <td><%= f.text_field :prefecture %></td>
+            </tr>
+            <tr>
+              <td>開催場所</td>
+              <td><%= f.text_field :venue %></td>
+            </tr>
+            <tr>
+              <td>開催日</td>
+              <td><%= f.text_field :event_date %></td>
+            </tr>
+            <tr>
+              <th>ステータス</th>
+              <td><%= f.radio_button :is_deleted, "active" %>
+                  <%= f.label :is_deleted, "公開" %>
+                  <%= f.radio_button :is_deleted, "deleted" %>
+                  <%= f.label :is_deleted, "非公開" %></td>
+            </tr>
+          </table>
+        <%= f.submit "変更を保存" %>
+      <% end %>
+    </div>
+  </div>
+</div>

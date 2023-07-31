@@ -5,6 +5,11 @@ ja:
           active: "有効"
           deleted: "退会"
 
+      article:
+        is_deleted:
+          active: "公開"
+          deleted: "非公開"
+
     activerecord:
       errors:
         messages:

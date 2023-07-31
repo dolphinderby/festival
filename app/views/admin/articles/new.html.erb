@@ -17,6 +17,15 @@
         <%= f.text_field :venue %>
         <p>開催日</p>
         <%= f.text_field :event_date %>
+        <p>タグ</p>
+        <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+            <div class='form-check'>
+                <%= tag.label class: 'form-check-label' do %>
+                    <%= tag.check_box class: 'form-check-input' %>
+                    <%= tag.text %>
+                <% end %>
+            </div>
+        <% end %>
         <%= f.submit '新規投稿' %>
       <% end %>
     </div>
