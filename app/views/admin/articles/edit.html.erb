@@ -3,43 +3,33 @@
     <div class="col-md-10 offset-md-1">
       <h1>記事編集</h1>
       <%= form_with model: @article, url: admin_article_path do |f| %>
-          <table width="80%">
-            <tr>
-              <td>お祭り写真</td>
-              <td><%= f.file_field :image, accept: "image/*" %></td>
-            </tr>
-            <tr>
-              <td>お祭り名</td>
-              <td><%= f.text_field :name %></td>
-            </tr>
-            <tr>
-              <td>副題</td>
-              <td><%= f.text_field :sub_title %></td>
-            </tr>
-            <tr>
-              <td>お祭り記事</td>
-              <td><%= f.text_field :introduction %></td>
-            </tr>
-            <tr>
-              <td>都道府県</td>
-              <td><%= f.text_field :prefecture %></td>
-            </tr>
-            <tr>
-              <td>開催場所</td>
-              <td><%= f.text_field :venue %></td>
-            </tr>
-            <tr>
-              <td>開催日</td>
-              <td><%= f.text_field :event_date %></td>
-            </tr>
-            <tr>
-              <th>ステータス</th>
-              <td><%= f.radio_button :is_deleted, "active" %>
-                  <%= f.label :is_deleted, "公開" %>
-                  <%= f.radio_button :is_deleted, "deleted" %>
-                  <%= f.label :is_deleted, "非公開" %></td>
-            </tr>
-          </table>
+        <p>お祭り写真</p>
+        <%= f.file_field :image, accept: "image/*" %>
+        <p>お祭り名</p>
+        <%= f.text_field :name, :size=>"60x10" %>
+        <p>副題</p>
+        <%= f.text_field :sub_title, :size=>"60x40" %>
+        <p>お祭り記事</p>
+        <%= f.text_field :introduction, :size=>"60x10" %>
+        <p>都道府県</p>
+        <%= f.text_field :prefecture, :size=>"60x10" %>
+        <p>開催場所</p>
+        <%= f.text_field :venue, :size=>"60x10" %>
+        <p>開催日</p>
+        <%= f.text_field :event_date, :size=>"60x10" %>
+        <p>ステータス</p>
+        <%= f.radio_button :is_deleted, "active" %>
+        <%= f.label :is_deleted, "公開" %>
+        <%= f.radio_button :is_deleted, "deleted" %>
+        <%= f.label :is_deleted, "非公開" %>
+        <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+          <div class='form-check'>
+            <%= tag.label class: 'form-check-label' do %>
+              <%= tag.check_box class: 'form-check-input' %>
+              <%= tag.text %>
+            <% end %>
+          </div>
+        <% end %><br>
         <%= f.submit "変更を保存" %>
       <% end %>
     </div>

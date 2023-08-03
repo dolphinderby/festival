@@ -1,6 +1,11 @@
 class Article < ApplicationRecord
   has_many :post_tags,dependent: :destroy
   has_many :tags,through: :post_tags, dependent: :destroy
+  has_many :nices, dependent: :destroy
+
+  def niced_by?(customer)
+    nices.exists?(customer_id: customer.id)
+  end
 
   has_one_attached :image
 

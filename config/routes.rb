@@ -15,7 +15,9 @@ Rails.application.routes.draw do
     patch 'customers/my_page/update' => 'customers#update'
     get 'customers/confirm' => 'customers#confirm'
     patch 'customers/withdraw' => 'customers#withdraw'
-    resources :articles, only: [:index, :show]
+    resources :articles, only: [:index, :show] do
+     resource :nices, only: [:create, :destroy]
+    end
   end
 
   devise_for :customers, controllers: {
