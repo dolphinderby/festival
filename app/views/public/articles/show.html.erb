@@ -34,18 +34,22 @@
           <span class= 'badge badge-primary'><%= tag.name %></span>
         <% end %>
       </table>
-      <% if @article.niced_by?(current_customer) %>
-        <p>
-          <%= link_to article_nices_path(@article), method: :delete do %>
-            ♥<%= @article.nices.count %> いいね
-          <% end %>
-        </p>
+      <% if customer_signed_in? %>
+        <% if @article.niced_by?(current_customer) %>
+          <p>
+            <%= link_to article_nices_path(@article), method: :delete do %>
+              ♥<%= @article.nices.count %> いいね
+            <% end %>
+          </p>
+        <% else %>
+          <p>
+            <%= link_to article_nices_path(@article), method: :post do %>
+              ♡<%= @article.nices.count %> いいね
+            <% end %>
+          </p>
+        <% end %>
       <% else %>
-        <p>
-          <%= link_to article_nices_path(@article), method: :post do %>
-            ♡<%= @article.nices.count %> いいね
-          <% end %>
-        </p>
+
       <% end %>
   </div>
 </div>

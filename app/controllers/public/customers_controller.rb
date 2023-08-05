@@ -31,8 +31,10 @@ class Public::CustomersController < ApplicationController
   end
 
   def nices
-    nices = Nice.where(customer_id: @customer.id).pluck(:article_id)
-    @nices = Article.find(nices)
+    #nices = Nice.where(customer_id: @customer.id).pluck(:article_id)
+    #@nices = Article.find(nices)
+    @articles = @customer.articles
+    byebug
   end
 
   private
