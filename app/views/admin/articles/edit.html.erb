@@ -18,9 +18,9 @@
         <p>開催日</p>
         <%= f.text_field :event_date, :size=>"60x10" %>
         <p>ステータス</p>
-        <%= f.radio_button :is_deleted, "active" %>
+        <%= f.radio_button :is_deleted, false %>
         <%= f.label :is_deleted, "公開" %>
-        <%= f.radio_button :is_deleted, "deleted" %>
+        <%= f.radio_button :is_deleted, true %>
         <%= f.label :is_deleted, "非公開" %>
         <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
           <div class='form-check'>

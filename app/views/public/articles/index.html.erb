@@ -1,5 +1,17 @@
 <div id="my-map"></div>
 <script>
+var areaLinks = {
+                 1:"https://www.pref.hokkaido.lg.jp/",　//リンク先URL
+                 2:"https://www.pref.aomori.lg.jp/",
+                 3:"https://www.pref.iwate.lg.jp/",
+                 4:"https://www.pref.miyagi.lg.jp/",
+                 5:"https://www.pref.hokkaido.lg.jp/",
+                 6:"https://www.pref.aomori.lg.jp/",
+                 7:"https://www.pref.iwate.lg.jp/",
+                 8:"https://www.pref.miyagi.lg.jp/",
+                 9:
+        };
+
 var d = new jpmap.japanMap(document.getElementById("my-map"), {
     areas: [
     {code : 1, name: "北海道", color: "#7f7eda", hoverColor: "#b3b2ee"},
@@ -50,13 +62,14 @@ var d = new jpmap.japanMap(document.getElementById("my-map"), {
     {code : 46, name: "鹿児島", color: "#ff9999", hoverColor: "#ffbdbd"},
     {code : 47, name: "沖縄", color: "#eb98ff", hoverColor: "#f5c9ff"},
   ],
-  showsPrefectureName: true, //都道府県名を表示させる
-  width: 1000,　//横幅のサイズ
-  movesIslands: true, //沖縄地方が地図の左上の分離されたスペースに移動する
-  lang: 'ja', //表示させている都道府県名を日本語にする
+
+  showsPrefectureName: true,
+  width: 1000,
+  movesIslands: true,
+  borderLineColor: "#000000",
+  lang: 'ja',
   onSelect: function(data){
-    alert(data.name);
+     location.href = areaLinks[data.area.code];
   }
 });
 </script>
-
