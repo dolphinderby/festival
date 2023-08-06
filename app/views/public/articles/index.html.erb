@@ -1,76 +1,54 @@
-<div id="my-map"></div>
-<script>
-var areaLinks = {
-                 1:"https://www.pref.hokkaido.lg.jp/",　//リンク先URL
-                 2:"https://www.pref.aomori.lg.jp/",
-                 3:"https://www.pref.iwate.lg.jp/",
-                 4:"https://www.pref.miyagi.lg.jp/",
-                 5:"https://www.pref.hokkaido.lg.jp/",
-                 6:"https://www.pref.aomori.lg.jp/",
-                 7:"https://www.pref.iwate.lg.jp/",
-                 8:"https://www.pref.miyagi.lg.jp/",
-                 9:"https://e23f19342c3e434ea52a1f9ecef73cf9.vfs.cloud9.ap-northeast-1.amazonaws.com/",
-
-        };
-
-var d = new jpmap.japanMap(document.getElementById("my-map"), {
-    areas: [
-    {code : 1, name: "北海道", color: "#7f7eda", hoverColor: "#b3b2ee"},
-    {code : 2, name: "青森", color: "#759ef4", hoverColor: "#98b9ff"},
-    {code : 3, name: "岩手", color: "#759ef4", hoverColor: "#98b9ff"},
-    {code : 4, name: "宮城", color: "#759ef4", hoverColor: "#98b9ff"},
-    {code : 5, name: "秋田", color: "#759ef4", hoverColor: "#98b9ff"},
-    {code : 6, name: "山形", color: "#759ef4", hoverColor: "#98b9ff"},
-    {code : 7, name: "福島", color: "#759ef4", hoverColor: "#98b9ff"},
-    {code : 8, name: "茨城", color: "#7ecfea", hoverColor: "#b7e5f4"},
-    {code : 9, name: "栃木", color: "#7ecfea", hoverColor: "#b7e5f4"},
-    {code : 10, name: "群馬", color: "#7ecfea", hoverColor: "#b7e5f4"},
-    {code : 11, name: "埼玉", color: "#7ecfea", hoverColor: "#b7e5f4"},
-    {code : 12, name: "千葉", color: "#7ecfea", hoverColor: "#b7e5f4"},
-    {code : 13, name: "東京", color: "#7ecfea", hoverColor: "#b7e5f4"},
-    {code : 14, name: "神奈川", color: "#7ecfea", hoverColor: "#b7e5f4"},
-    {code : 15, name: "新潟", color: "#7cdc92", hoverColor: "#aceebb"},
-    {code : 16, name: "富山", color: "#7cdc92", hoverColor: "#aceebb"},
-    {code : 17, name: "石川", color: "#7cdc92", hoverColor: "#aceebb"},
-    {code : 18, name: "福井", color: "#7cdc92", hoverColor: "#aceebb"},
-    {code : 19, name: "山梨", color: "#7cdc92", hoverColor: "#aceebb"},
-    {code : 20, name: "長野", color: "#7cdc92", hoverColor: "#aceebb"},
-    {code : 21, name: "岐阜", color: "#7cdc92", hoverColor: "#aceebb"},
-    {code : 22, name: "静岡", color: "#7cdc92", hoverColor: "#aceebb"},
-    {code : 23, name: "愛知", color: "#7cdc92", hoverColor: "#aceebb"},
-    {code : 24, name: "三重", color: "#ffe966", hoverColor: "#fff19c"},
-    {code : 25, name: "滋賀", color: "#ffe966", hoverColor: "#fff19c"},
-    {code : 26, name: "京都", color: "#ffe966", hoverColor: "#fff19c"},
-    {code : 27, name: "大阪", color: "#ffe966", hoverColor: "#fff19c"},
-    {code : 28, name: "兵庫", color: "#ffe966", hoverColor: "#fff19c"},
-    {code : 29, name: "奈良", color: "#ffe966", hoverColor: "#fff19c"},
-    {code : 30, name: "和歌山", color: "#ffe966", hoverColor: "#fff19c"},
-    {code : 31, name: "鳥取", color: "#ffcc66", hoverColor: "#ffe0a3"},
-    {code : 32, name: "島根", color: "#ffcc66", hoverColor: "#ffe0a3"},
-    {code : 33, name: "岡山", color: "#ffcc66", hoverColor: "#ffe0a3"},
-    {code : 34, name: "広島", color: "#ffcc66", hoverColor: "#ffe0a3"},
-    {code : 35, name: "山口", color: "#ffcc66", hoverColor: "#ffe0a3"},
-    {code : 36, name: "徳島", color: "#fb9466", hoverColor: "#ffbb9c"},
-    {code : 37, name: "香川", color: "#fb9466", hoverColor: "#ffbb9c"},
-    {code : 38, name: "愛媛", color: "#fb9466", hoverColor: "#ffbb9c"},
-    {code : 39, name: "高知", color: "#fb9466", hoverColor: "#ffbb9c"},
-    {code : 40, name: "福岡", color: "#ff9999", hoverColor: "#ffbdbd"},
-    {code : 41, name: "佐賀", color: "#ff9999", hoverColor: "#ffbdbd"},
-    {code : 42, name: "長崎", color: "#ff9999", hoverColor: "#ffbdbd"},
-    {code : 43, name: "熊本", color: "#ff9999", hoverColor: "#ffbdbd"},
-    {code : 44, name: "大分", color: "#ff9999", hoverColor: "#ffbdbd"},
-    {code : 45, name: "宮崎", color: "#ff9999", hoverColor: "#ffbdbd"},
-    {code : 46, name: "鹿児島", color: "#ff9999", hoverColor: "#ffbdbd"},
-    {code : 47, name: "沖縄", color: "#eb98ff", hoverColor: "#f5c9ff"},
-  ],
-
-  showsPrefectureName: true,
-  width: 1000,
-  movesIslands: true,
-  borderLineColor: "#000000",
-  lang: 'ja',
-  onSelect: function(data){
-     location.href = areaLinks[data.area.code];
-  }
-});
-</script>
+<h1>都道府県一覧</h1>
+<h4>北海道・東北</h4>
+  <p>北海道</p>
+  <p>青森県</p>
+  <p>岩手県</p>
+  <p>宮城県</p>
+  <p>秋田県</p>
+  <p>山形県</p>
+  <p>福島県</p>
+<h4>関東</h4>
+  <p>茨城県</p>
+  <p>栃木県</p>
+  <p>群馬県</p>
+  <p>埼玉県</p>
+  <p>千葉県</p>
+  <p>東京都</p>
+  <p>神奈川県</p>
+<h4>中部</h4>
+  <p>新潟県</p>
+  <p>富山県</p>
+  <p>石川県</p>
+  <p>福井県</p>
+  <p>山梨県</p>
+  <p>長野県</p>
+  <p>岐阜県</p>
+  <p>静岡県</p>
+  <p>愛知県</p>
+<h4>近畿</h4>
+  <p>三重県</p>
+  <p>滋賀県</p>
+  <p>京都府</p>
+  <p>大阪府</p>
+  <p>兵庫県</p>
+  <p>奈良県</p>
+  <p>和歌山県</p>
+<h4>中国・四国</h4>
+  <p>鳥取県</p>
+  <p>島根県</p>
+  <p>岡山県</p>
+  <p>広島県</p>
+  <p>山口県</p>
+  <p>徳島県</p>
+  <p>香川県</p>
+  <p>愛媛県</p>
+  <p>高知県</p>
+<h4>九州・沖縄</h4>
+  <p>福岡県</p>
+  <p>佐賀県</p>
+  <p>長崎県</p>
+  <p>熊本県</p>
+  <p>大分県</p>
+  <p>宮崎県</p>
+  <p>鹿児島県</p>
+  <p>沖縄県</p>
