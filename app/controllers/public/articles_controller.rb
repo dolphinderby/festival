@@ -1,10 +1,15 @@
 class Public::ArticlesController < ApplicationController
 
   def index
+
   end
 
   def prefecture
-    @tokyo = Article.where(prefeture_name: "東京都" ,is_deleted: false)
+    if params[:prefecture_name]
+      @tokyo = Article.where(prefecture: params[:prefecture_name] ,is_deleted: false)
+    else
+      @tokyo = Article.where(is_deleted: false)
+    end
   end
 
   def show

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   scope module: :public do
     root :to => 'homes#top'
+    get 'articles/prefecture' => 'articles#prefecture'
     get 'customers/my_page' => 'customers#show'
     get 'customers/my_page/edit' => 'customers#edit'
     get 'customers/my_page/nice' => 'customers#nice'
@@ -30,7 +31,6 @@ Rails.application.routes.draw do
       resource :nices, only: [:create, :destroy]
       resources :comments, only: [:create, :destroy]
     end
-    get 'articles/prefecture' => 'articles#prefecture'
   end
 
 
