@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :tags, only: [:index, :new, :create, :edit, :update]
     resources :articles, only: [:index, :new, :create, :show, :edit, :update]
     patch 'articles/:id/withdraw' => 'articles#withdraw'
+    get 'search' => 'articles#search'
   end
 
   scope module: :public do

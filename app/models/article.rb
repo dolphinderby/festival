@@ -8,6 +8,10 @@ class Article < ApplicationRecord
     nices.exists?(customer_id: customer.id)
   end
 
+  def self.search(keyword)
+    where("facility_name LIKE ?", "%#{keyword}%")
+  end
+
   has_one_attached :image
 
   def get_image
