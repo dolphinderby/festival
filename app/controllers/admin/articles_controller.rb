@@ -18,6 +18,7 @@ class Admin::ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @customers = Customer.all
   end
 
   def edit

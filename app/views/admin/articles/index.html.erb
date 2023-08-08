@@ -8,6 +8,7 @@
           <tr>
             <th>記事ID</th>
             <th>お祭り名</th>
+            <th></th>
             <th>都道府県</th>
             <th>ステータス</th>
           </tr>
@@ -21,6 +22,7 @@
                   <%= article.name %>
                 <% end %>
               </td>
+              <td>コメント件数：<%= article.comments.count %></td>
               <td><%= article.prefecture %></td>
               <td><%= article.is_deleted %></td>
             </tr>

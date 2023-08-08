@@ -42,7 +42,14 @@
           <span class= 'badge badge-primary'><%= tag.name %></span>
         <% end %>
       </table>
-    <%= link_to "編集する", edit_admin_article_path(@article.id) %>
+    <%= link_to "編集する", edit_admin_article_path(@article.id) %><br>
+    <% @article.comments.each do |comment| %>
+      <%= link_to admin_customer_path(comment.customer.id) do %>
+        <%= comment.customer.nickname %>
+      <% end %>
+      <%= comment.created_at.strftime('%Y/%m/%d') %><%= comment.comment %>
+
+    <% end %>
     </div>
   </div>
 </div>
