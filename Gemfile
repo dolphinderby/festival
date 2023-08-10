@@ -62,3 +62,5 @@ gem "enum_help"
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 
 gem 'jcanvas-rails', '~> 0.1.0'
+
+gem 'kaminari','~> 1.2.1'
