@@ -17,4 +17,8 @@ class Public::ArticlesController < ApplicationController
     @comment = Comment.new
   end
 
+  def search
+    @articles = Article.all.search(params[:keyword])
+  end
+
 end

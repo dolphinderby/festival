@@ -1,0 +1,10 @@
+<% if @articles.exists? %> <%# キーワードから検索%>
+    <% @articles.each do |article| %>
+      <%= link_to article_path(article.id) do %>
+        <%= article.name %>
+      <% end %>
+      <%= article.prefecture %>
+    <% end %>
+　<% else %>
+  　　<p>該当する記事は見つかりませんでした。</p>
+　<% end %>
