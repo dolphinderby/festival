@@ -1,10 +1,35 @@
-<% if @articles.exists? %> <%# キーワードから検索%>
-    <% @articles.each do |article| %>
-      <%= link_to article_path(article.id) do %>
-        <%= article.name %>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-11 offset-md-1">
+      <% if @articles.exists? %> <%# キーワードから検索%>
+        <h1>記事一覧</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>お祭り名</th>
+              <th>都道府県</th>
+              <th>タグ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @articles.each do |article| %>
+              <tr>
+                <td>
+                  <%= link_to article_path(article.id) do %>
+                    <%= article.name %>
+                  <% end %>
+                </td>
+                <td><%= article.prefecture %></td>
+                <td>
+                  <% article.tags.each do |tag| %>
+                    <%= tag.name %>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+      <% else %>
+  　　    <p>該当する記事は見つかりませんでした。</p>
       <% end %>
-      <%= article.prefecture %>
-    <% end %>
-　<% else %>
-  　　<p>該当する記事は見つかりませんでした。</p>
-　<% end %>
+    </div>
+  </div>
+</div>

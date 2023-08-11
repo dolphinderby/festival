@@ -1,8 +1,33 @@
-
-<% @tokyo.each do |article|  %><%# 都道府県一覧から検索%>
-    <p>
-      <%= link_to article_path(article.id) do %>
-        <%= article.name %>
-      <% end %>
-    </p>
-<% end %>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-11 offset-md-1">
+      <h1>記事一覧</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>お祭り名</th>
+            <th>都道府県</th>
+            <th>タグ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @tokyo.each do |article|  %><%# 都道府県一覧から検索%>
+            <tr>
+              <td>
+                <%= link_to article_path(article.id) do %>
+                  <%= article.name %>
+                <% end %>
+              </td>
+              <td><%= article.prefecture %></td>
+              <td>
+                <% article.tags.each do |tag| %>
+                  <%= tag.name %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

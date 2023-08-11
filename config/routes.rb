@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   scope module: :public do
     root :to => 'homes#top'
     get 'articles/prefecture' => 'articles#prefecture'
+    get 'articles/tag' => 'articles#tag'
     get 'customers/my_page' => 'customers#show'
     get 'customers/my_page/edit' => 'customers#edit'
     get 'customers/my_page/nice' => 'customers#nice'
