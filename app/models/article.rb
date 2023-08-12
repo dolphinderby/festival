@@ -2,10 +2,15 @@ class Article < ApplicationRecord
   has_many :post_tags,dependent: :destroy
   has_many :tags,through: :post_tags, dependent: :destroy
   has_many :nices, dependent: :destroy
+  has_many :notes, dependent: :destroy
   has_many :comments, dependent: :destroy
 
   def niced_by?(customer)
     nices.exists?(customer_id: customer.id)
+  end
+
+  def noted_by?(customer)
+    notes.exists?(customer_id: customer.id)
   end
 
   def self.search(search_word)

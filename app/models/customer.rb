@@ -6,6 +6,8 @@ class Customer < ApplicationRecord
 
   has_many :nices, dependent: :destroy
   has_many :articles,through: :nices, source: :article
+  has_many :notes, dependent: :destroy
+  has_many :articles,through: :notes, source: :article
   has_many :comments, dependent: :destroy
 
   has_one_attached :image

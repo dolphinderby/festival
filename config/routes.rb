@@ -25,11 +25,13 @@ Rails.application.routes.draw do
     get 'customers/my_page' => 'customers#show'
     get 'customers/my_page/edit' => 'customers#edit'
     get 'customers/my_page/nice' => 'customers#nice'
+    get 'customers/my_page/note' => 'customers#note'
     patch 'customers/my_page/update' => 'customers#update'
     get 'customers/confirm' => 'customers#confirm'
     patch 'customers/withdraw' => 'customers#withdraw'
     resources :articles, only: [:index, :show] do
       resource :nices, only: [:create, :destroy]
+      resource :notes, only: [:create, :destroy]
       resources :comments, only: [:create, :destroy]
     end
     get "/search" => "articles#search"

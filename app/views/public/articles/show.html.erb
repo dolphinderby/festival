@@ -48,6 +48,19 @@
             <% end %>
           </p>
         <% end %>
+        <% if @article.noted_by?(current_customer) %>
+          <p>
+            <%= link_to article_notes_path(@article), method: :delete do %>
+              ★ノート記述済
+            <% end %>
+          </p>
+        <% else %>
+          <p>
+            <%= link_to article_notes_path(@article), method: :post do %>
+              ☆ノートに書く
+            <% end %>
+          </p>
+        <% end %>
         <div>
         <%= form_with model: [@article, @comment] do |f| %>
           <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>

@@ -24,8 +24,9 @@
           </tr>
         </table>
       </tbody>
-      <a><%= link_to "編集する", customers_my_page_edit_path %></a>
-      <a><%= link_to "いいねした記事", customers_my_page_nice_path(@customer) %></a>
+      <a><%= link_to "編集する", customers_my_page_edit_path %></a><br>
+      <a><%= link_to "いいねした記事", customers_my_page_nice_path(@customer) %></a><br>
+      <a><%= link_to "ノートを見る", customers_my_page_note_path(@customer) %></a>
     </div>
   </div>
 </div>
