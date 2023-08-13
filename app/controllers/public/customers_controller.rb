@@ -37,6 +37,10 @@ class Public::CustomersController < ApplicationController
     byebug
   end
 
+  def note
+    @articles = @customer.articles
+  end
+
   private
 
   def customer_params
