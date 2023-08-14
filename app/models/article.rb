@@ -6,7 +6,7 @@ class Article < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   def niced_by?(customer)
-    nices.exists?(customer_id: customer.id)
+    nices.where(customer_id: customer.id).exists?
   end
 
   def noted_by?(customer)

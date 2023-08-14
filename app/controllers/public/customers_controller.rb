@@ -31,10 +31,11 @@ class Public::CustomersController < ApplicationController
   end
 
   def nices
-    #nices = Nice.where(customer_id: @customer.id).pluck(:article_id)
-    #@nices = Article.find(nices)
-    @articles = @customer.articles
-    byebug
+    #@articles = @customer.articles
+    #byebug
+    @customer = Customer.find(params[:id])
+    nices = Nice.where(customer_id: @customer.id).pluck(:article_id)
+    @nice_articles = Article.find(nices)
   end
 
   def note
