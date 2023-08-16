@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
-  has_many :post_tags,dependent: :destroy
-  has_many :tags,through: :post_tags, dependent: :destroy
+  has_many :post_tags, dependent: :destroy
+  has_many :tags, through: :post_tags, dependent: :destroy
   has_many :nices, dependent: :destroy
   has_many :notes, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -10,7 +10,7 @@ class Article < ApplicationRecord
   end
 
   def noted_by?(customer)
-    notes.exists?(customer_id: customer.id)
+    notes.where(customer_id: customer.id).exists?
   end
 
   def self.search(search_word)

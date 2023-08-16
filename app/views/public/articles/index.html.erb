@@ -1,54 +1,60 @@
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-11 offset-md-1">
 <h1>都道府県から探す</h1>
 <h4>北海道・東北</h4>
-  <p>北海道</p>
-  <p>青森県</p>
-  <p>岩手県</p>
-  <p>宮城県</p>
-  <p>秋田県</p>
-  <p>山形県</p>
-  <p>福島県</p>
+  <p><%= link_to "北海道", articles_prefecture_path(prefecture_name: "北海道") %></p>
+  <p><%= link_to "青森県", articles_prefecture_path(prefecture_name: "青森県") %></p>
+  <p><%= link_to "岩手県", articles_prefecture_path(prefecture_name: "岩手県") %></p>
+  <p><%= link_to "宮城県", articles_prefecture_path(prefecture_name: "宮城県") %></p>
+  <p><%= link_to "秋田県", articles_prefecture_path(prefecture_name: "秋田県") %></p>
+  <p><%= link_to "山形県", articles_prefecture_path(prefecture_name: "山形県") %></p>
+  <p><%= link_to "福島県", articles_prefecture_path(prefecture_name: "福島県") %></p>
 <h4>関東</h4>
-  <p>茨城県</p>
-  <p>栃木県</p>
-  <p>群馬県</p>
-  <p>埼玉県</p>
-  <p>千葉県</p>
+  <p><%= link_to "茨城県", articles_prefecture_path(prefecture_name: "茨城県") %></p>
+  <p><%= link_to "栃木県", articles_prefecture_path(prefecture_name: "栃木県") %></p>
+  <p><%= link_to "群馬県", articles_prefecture_path(prefecture_name: "群馬県") %></p>
+  <p><%= link_to "埼玉県", articles_prefecture_path(prefecture_name: "埼玉県") %></p>
+  <p><%= link_to "千葉県", articles_prefecture_path(prefecture_name: "千葉県") %></p>
   <p><%= link_to "東京都", articles_prefecture_path(prefecture_name: "東京都") %></p>
-  <p>神奈川県</p>
+  <p><%= link_to "神奈川県", articles_prefecture_path(prefecture_name: "神奈川県") %></p>
 <h4>中部</h4>
-  <p>新潟県</p>
-  <p>富山県</p>
-  <p>石川県</p>
-  <p>福井県</p>
-  <p>山梨県</p>
-  <p>長野県</p>
-  <p>岐阜県</p>
-  <p>静岡県</p>
+  <p><%= link_to "新潟県", articles_prefecture_path(prefecture_name: "新潟県") %></p>
+  <p><%= link_to "富山県", articles_prefecture_path(prefecture_name: "富山県") %></p>
+  <p><%= link_to "石川県", articles_prefecture_path(prefecture_name: "石川県") %></p>
+  <p><%= link_to "福井県", articles_prefecture_path(prefecture_name: "福井県") %></p>
+  <p><%= link_to "山梨県", articles_prefecture_path(prefecture_name: "山梨県") %></p>
+  <p><%= link_to "長野県", articles_prefecture_path(prefecture_name: "長野県") %></p>
+  <p><%= link_to "岐阜県", articles_prefecture_path(prefecture_name: "岐阜県") %></p>
+  <p><%= link_to "静岡県", articles_prefecture_path(prefecture_name: "静岡県") %></p>
   <p><%= link_to "愛知県", articles_prefecture_path(prefecture_name: "愛知県") %></p>
 <h4>近畿</h4>
-  <p>三重県</p>
-  <p>滋賀県</p>
-  <p>京都府</p>
-  <p>大阪府</p>
-  <p>兵庫県</p>
-  <p>奈良県</p>
-  <p>和歌山県</p>
+  <p><%= link_to "三重県", articles_prefecture_path(prefecture_name: "三重県") %></p>
+  <p><%= link_to "滋賀県", articles_prefecture_path(prefecture_name: "滋賀県") %></p>
+  <p><%= link_to "京都府", articles_prefecture_path(prefecture_name: "京都府") %></p>
+  <p><%= link_to "大阪府", articles_prefecture_path(prefecture_name: "大阪府") %></p>
+  <p><%= link_to "兵庫県", articles_prefecture_path(prefecture_name: "兵庫県") %></p>
+  <p><%= link_to "奈良県", articles_prefecture_path(prefecture_name: "奈良県") %></p>
+  <p><%= link_to "和歌山県", articles_prefecture_path(prefecture_name: "和歌山県") %></p>
 <h4>中国・四国</h4>
-  <p>鳥取県</p>
-  <p>島根県</p>
-  <p>岡山県</p>
-  <p>広島県</p>
-  <p>山口県</p>
-  <p>徳島県</p>
-  <p>香川県</p>
-  <p>愛媛県</p>
-  <p>高知県</p>
+  <p><%= link_to "鳥取県", articles_prefecture_path(prefecture_name: "鳥取県") %></p>
+  <p><%= link_to "島根県", articles_prefecture_path(prefecture_name: "島根県") %></p>
+  <p><%= link_to "岡山県", articles_prefecture_path(prefecture_name: "岡山県") %></p>
+  <p><%= link_to "広島県", articles_prefecture_path(prefecture_name: "広島県") %></p>
+  <p><%= link_to "山口県", articles_prefecture_path(prefecture_name: "山口県") %></p>
+  <p><%= link_to "徳島県", articles_prefecture_path(prefecture_name: "徳島県") %></p>
+  <p><%= link_to "香川県", articles_prefecture_path(prefecture_name: "香川県") %></p>
+  <p><%= link_to "愛媛県", articles_prefecture_path(prefecture_name: "愛媛県") %></p>
+  <p><%= link_to "高知県", articles_prefecture_path(prefecture_name: "高知県") %></p>
 <h4>九州・沖縄</h4>
-  <p>福岡県</p>
-  <p>佐賀県</p>
-  <p>長崎県</p>
-  <p>熊本県</p>
-  <p>大分県</p>
-  <p>宮崎県</p>
-  <p>鹿児島県</p>
-  <p>沖縄県</p>
+  <p><%= link_to "福岡県", articles_prefecture_path(prefecture_name: "福岡県") %></p>
+  <p><%= link_to "佐賀県", articles_prefecture_path(prefecture_name: "佐賀県") %></p>
+  <p><%= link_to "長崎県", articles_prefecture_path(prefecture_name: "長崎県") %></p>
+  <p><%= link_to "熊本県", articles_prefecture_path(prefecture_name: "熊本県") %></p>
+  <p><%= link_to "大分県", articles_prefecture_path(prefecture_name: "大分県") %></p>
+  <p><%= link_to "宮崎県", articles_prefecture_path(prefecture_name: "宮崎県") %></p>
+  <p><%= link_to "鹿児島県", articles_prefecture_path(prefecture_name: "鹿児島県") %></p>
+  <p><%= link_to "沖縄県", articles_prefecture_path(prefecture_name: "沖縄県") %></p>
+    </div>
+  </div>
+</div>

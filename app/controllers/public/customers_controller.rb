@@ -1,5 +1,4 @@
 class Public::CustomersController < ApplicationController
-  before_action :set_customer, only: [:nices]
 
   def show
     @customer = current_customer
@@ -30,26 +29,18 @@ class Public::CustomersController < ApplicationController
     redirect_to root_path
   end
 
-  def nices
-    #@articles = @customer.articles
-    #byebug
-    @customer = Customer.find(params[:id])
-    nices = Nice.where(customer_id: @customer.id).pluck(:article_id)
-    @nice_articles = Article.find(nices)
+  def nice
+    @articles = current_customer.nice_articles
   end
 
   def note
-    @articles = @customer.articles
+    @articles = current_customer.note_articles
   end
 
   private
 
   def customer_params
     params.require(:customer).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :nickname, :email, :image)
-  end
-
-  def set_customer
-    @customer = Customer.find(params[:id])
   end
 
 end

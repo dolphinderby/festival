@@ -12,13 +12,18 @@ class Public::ArticlesController < ApplicationController
     end
   end
 
+  def tag_articles
+    @articles = Article.includes(:post_tags).where(post_tags: {tag_id: params[:tag]})
+    #@customer = Article.includes(:customer).where(customers: {first_name: "taro"})
+  end
+
   def show
     @article = Article.find(params[:id])
     @comment = Comment.new
   end
 
   def search
-    @articles = Article.all.search(params[:keyword])
+    @articles = Article.all.search(params[:keyword] )
   end
 
 end

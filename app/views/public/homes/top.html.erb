@@ -5,6 +5,16 @@
       <p>このページでは全国各地のお祭りを紹介します。</p>
       <P>観光の際にぜひ役立ててください！</P>
       <P>また、みんなで思い出を共有しましょう！！</P>
+      <h3>タグ検索</h3>
+      <% @tags.each do |tag| %>
+        <tr>
+          <td>
+            <%= link_to tag_articles_path(tag: tag.id) do %>
+              <%= tag.name %>(<%= tag.articles.count %>)
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
     </div>
   </div>
 </div>

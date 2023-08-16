@@ -5,9 +5,9 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :nices, dependent: :destroy
-  has_many :articles,through: :nices, source: :article
+  has_many :nice_articles, through: :nices, source: :article
   has_many :notes, dependent: :destroy
-  has_many :articles,through: :notes, source: :article
+  has_many :note_articles, through: :notes, source: :article
   has_many :comments, dependent: :destroy
 
   has_one_attached :image
