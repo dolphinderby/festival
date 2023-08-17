@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="https://kit.fontawesome.com/36e275b931.js" crossorigin="anonymous"></script>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script type="text/javascript" src="https://unpkg.com/japan-map-js@1.0.1/dist/jpmap.min.js"></script>
@@ -35,14 +35,14 @@
                 <li>
                   <p class="nav-link text-light">
                     <%= link_to customers_my_page_path do %>
-                      マイページ
+                      マイページ<i class="fa-solid fa-user"></i>
                     <% end %>
                   </p>
                 </li>
                 <li>
                   <p class="nav-link text-light">
                     <%= link_to destroy_customer_session_path, method: :delete  do %>
-                      ログアウト
+                      ログアウト<i class="fa-solid fa-right-from-bracket"></i>
                     <% end %>
                   </p>
                 </li>
@@ -50,7 +50,7 @@
                   <%= form_with url: search_path, method: :get, local: true do |f| %>
                     <%= f.text_field :keyword,placeholder: "キーワードで検索", class: "search-text"%>
                     <%= button_tag type: "submit", class: "btn btn-default" do %>
-                      <p>検索</p>
+                      <i class="fa-solid fa-magnifying-glass"></i>
                     <% end %>
                   <% end %>
                 </li>
@@ -58,7 +58,7 @@
                 <li>
                   <p class="nav-link text-light">
                     <%= link_to admin_customers_path do %>
-                      会員一覧
+                      会員一覧<i class="fa-solid fa-users"></i>
                     <% end %>
                   </p>
                 </li>
@@ -101,7 +101,7 @@
                 <li>
                   <p class="nav-link text-light">
                     <%= link_to new_customer_session_path do %>
-                      ログイン
+                      ログイン<i class="fa-solid fa-right-to-bracket"></i>
                     <% end %>
                   </p>
                 </li>
@@ -109,7 +109,7 @@
                   <%= form_with url: search_path, method: :get, local: true do |f| %>
                     <%= f.text_field :keyword,placeholder: "キーワードで検索", class: "search-text"%>
                     <%= button_tag type: "submit", class: "btn btn-default" do %>
-                      <p>検索</p>
+                      <i class="fa-solid fa-magnifying-glass"></i>
                     <% end %>
                   <% end %>
                 </li>
