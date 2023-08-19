@@ -1,6 +1,9 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
-    <div class="col-md-11 offset-md-1">
+    <div class="col-lg-3" >
+      <%= render 'layouts/application', tags: @tags %>
+    </div>
+    <div class="col-lg-9">
       <% if @articles.exists? %>
       <h1>いいねした記事一覧</h1>
       <table class="table">

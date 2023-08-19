@@ -1,10 +1,12 @@
 class Public::CustomersController < ApplicationController
 
   def show
+    @tags = Tag.all
     @customer = current_customer
   end
 
   def edit
+    @tags = Tag.all
     @customer = current_customer
   end
 
@@ -30,10 +32,12 @@ class Public::CustomersController < ApplicationController
   end
 
   def nice
+    @tags = Tag.all
     @articles = current_customer.nice_articles
   end
 
   def note
+    @tags = Tag.all
     @articles = current_customer.note_articles
   end
 
