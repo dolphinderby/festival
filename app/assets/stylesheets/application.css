@@ -16,3 +16,19 @@
 navbar-brand{
   font-family: 'Nanum Gothic', sans-serif;
 }
+.flex {
+  display: flex; /*横並び*/
+}
+.flex .image img {
+  width: 100%;
+  height: auto;
+}
+.flex .text {
+  margin: 0 0 0 20px;
+  padding: 0;
+}
+
+body {
+  margin: 20px;
+  padding: 0;
+}

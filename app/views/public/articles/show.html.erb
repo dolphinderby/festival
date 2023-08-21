@@ -4,19 +4,15 @@
       <%= render 'layouts/application', tags: @tags %>
     </div>
     <div class="col-lg-9">
+      <h2><%= @article.name %></h2>
+      <h4><%= @article.sub_title %></h4>
+      <div class="flex">
+        <figure class="image">
+          <%= image_tag @article.get_image %>
+        </figure>
+        <p class="text"><%= @article.prefecture %></td>
+      </div>
       <table class="table">
-        <tr>
-          <th>お祭り写真</th>
-          <td><%= image_tag @article.get_image %></td>
-        </tr>
-        <tr>
-          <th>お祭り名</th>
-          <td><%= @article.name %></td>
-        </tr>
-        <tr>
-          <th>副題</th>
-          <td><%= @article.sub_title %></td>
-        </tr>
         <tr>
           <th>記事本文</th>
           <td><%= @article.introduction %></td>
