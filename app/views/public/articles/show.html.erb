@@ -10,13 +10,8 @@
         <figure class="image">
           <%= image_tag @article.get_image %>
         </figure>
-        <p class="text"><%= @article.prefecture %></td>
       </div>
       <table class="table">
-        <tr>
-          <th>記事本文</th>
-          <td><%= @article.introduction %></td>
-        </tr>
         <tr>
           <th>都道府県</th>
           <td><%= @article.prefecture %></td>
@@ -33,6 +28,10 @@
           <span class= 'badge badge-primary'><%= tag.name %></span>
         <% end %>
       </table>
+        <tr>
+          <th>記事本文</th>
+          <td><%= @article.introduction %></td>
+        </tr>
       <% if customer_signed_in? %>
         <% if @article.niced_by?(current_customer) %>
           <p>
