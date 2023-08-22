@@ -15,7 +15,7 @@ class Public::ArticlesController < ApplicationController
 
   def tag_articles
     @tags = Tag.all
-    @articles = Article.includes(:post_tags).where(post_tags: {tag_id: params[:tag]})
+    @articles = Article.includes(:post_tags).where(post_tags: {tag_id: params[:tag]},is_deleted: false)
     #@customer = Article.includes(:customer).where(customers: {first_name: "taro"})
   end
 
