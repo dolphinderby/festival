@@ -10,7 +10,7 @@
   <tr>
     <th>
       <%= link_to tag_articles_path(tag: tag.id) do %>
-        <%= tag.name %>
+        <%= tag.name %>(<%= tag.articles.where(is_deleted: false).count %>)
       <% end %>
     </th>
   </tr>

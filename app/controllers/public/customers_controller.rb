@@ -33,7 +33,7 @@ class Public::CustomersController < ApplicationController
 
   def nice
     @tags = Tag.all
-    @articles = current_customer.nice_articles
+    @articles = current_customer.nice_articles.where(is_deleted: false)
   end
 
   def note

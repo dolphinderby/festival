@@ -15,7 +15,7 @@ class Article < ApplicationRecord
 
   def self.search(search_word)
   Article.where(["name LIKE(?) OR prefecture LIKE(?) OR sub_title LIKE(?)",
-                 "%#{search_word}%", "%#{search_word}%", "%#{search_word}%"])
+                 "%#{search_word}%", "%#{search_word}%", "%#{search_word}%"]).where(is_deleted: false)
   end
 
   has_one_attached :image
