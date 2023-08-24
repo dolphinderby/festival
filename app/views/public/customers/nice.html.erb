@@ -32,8 +32,10 @@
           <% end %>
         </tbody>
       </table>
+      <a><%= link_to "ノートを見る", customers_my_page_note_path %></a>
       <% else %>
         <p>いいねした記事がありません。気に入ったお祭りを探してみましょう！！</p>
+        <a><%= link_to "ノートを見る", customers_my_page_note_path %></a>
       <% end %>
     </div>
   </div>
