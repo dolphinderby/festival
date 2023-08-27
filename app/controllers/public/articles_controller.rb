@@ -7,9 +7,9 @@ class Public::ArticlesController < ApplicationController
   def prefecture
     @tags = Tag.all
     if params[:prefecture_name]
-      @tokyo = Article.where(prefecture: params[:prefecture_name] ,is_deleted: false)
+      @prefecture = Article.where(prefecture: params[:prefecture_name] ,is_deleted: false)
     else
-      @tokyo = Article.where(is_deleted: false)
+      @prefecture = Article.where(is_deleted: false)
     end
   end
 
