@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :customers, only: [:index, :show, :edit, :update]
     resources :tags, only: [:index, :new, :create, :edit, :update]
     resources :articles, only: [:index, :new, :create, :show, :edit, :update]
+    resources :comments, only: :destroy
     patch 'articles/:id/withdraw' => 'articles#withdraw'
     get 'search' => 'articles#search'
   end

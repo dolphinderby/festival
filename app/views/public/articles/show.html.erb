@@ -70,15 +70,21 @@
       <% end %>
       <div>
         <p>いいね：<%= @article.nices.count %>件</p>
-        <p>コメント件数：<%= @article.comments.count %></p>
+        <p>コメント件数：<%= @active_comments.count %></p>
         <p>コメント一覧</p>
-        <% @article.comments.each do |comment| %>
-          <%= image_tag comment.customer.get_image %>
-          <%= comment.customer.nickname %>
-          <%= comment.created_at.strftime('%Y/%m/%d') %><%= comment.comment %>
-          <% if comment.customer == current_customer %>
-            <%= link_to "削除", article_comment_path(comment.article, comment), method: :delete %>
-          <% end %>
+        <% @active_comments.each do |comment| %>
+        <table>
+          <tr>
+            <td>
+              <%= image_tag comment.customer.get_image %>
+              <%= comment.customer.nickname %>
+              <%= comment.created_at.strftime('%Y/%m/%d') %><%= comment.comment %>
+              <% if comment.customer == current_customer %>
+                <%= link_to "削除", article_comment_path(comment.article, comment), method: :delete %>
+              <% end %>
+            </td>
+          </tr>
+        </table>
         <% end %>
       </div>
     </div>

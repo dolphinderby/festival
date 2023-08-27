@@ -34,7 +34,34 @@
           <td><%= @customer.is_deleted_i18n %></td>
         </tr>
       </table>
-    <%= link_to "編集する", edit_admin_customer_path(@customer.id) %>
+      <%= link_to "編集する", edit_admin_customer_path(@customer.id) %>
+    </div>
+    <div class="col-md-10 offset-md-1">
+      <h5>ユーザーコメント履歴</h5>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>お祭り名</th>
+              <th>コメント</th>
+              <th>日付</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @customer.comments.each do |comment| %>
+              <tr>
+                <td>
+                  <%= link_to admin_article_path(comment.article.id) do %>
+                    <%= comment.article.name %>
+                  <% end %>
+                </td>
+                <td><%= comment.comment %></td>
+                <td><%= comment.created_at.strftime('%Y/%m/%d') %></td>
+                <td><%= link_to "削除", admin_comment_path(comment), method: :delete %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
     </div>
   </div>
 </div>
