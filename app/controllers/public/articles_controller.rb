@@ -28,7 +28,7 @@ class Public::ArticlesController < ApplicationController
 
   def search
     @tags = Tag.all
-    @articles = Article.all.search(params[:keyword] )
+    @articles = Article.page(params[:page]).search(params[:keyword] )
   end
 
 end
