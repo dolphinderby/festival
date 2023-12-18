@@ -20,10 +20,14 @@ class Public::ArticlesController < ApplicationController
   end
 
   def show
-    @tags = Tag.all
     @article = Article.find(params[:id])
-    @active_comments = @article.comments.active_comments
-    @comment = Comment.new
+    if @article.is_deleted == true
+      redirect_to root_path
+    else
+      @tags = Tag.all
+      @active_comments = @article.comments.active_comments
+      @comment = Comment.new
+    end
   end
 
   def search
